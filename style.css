@@ -3,28 +3,32 @@
 
 }
 .container {
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 40px 200px 40px ;
+    grid-template-rows: 40px auto 40px;
     grid-gap: 3px;
+    grid-template-areas:
+        "h h h h h h h h h h h h" 
+        "m c c c c c c c c c c c "
+        "h f f f f f f f f f f f ";
 }
 
 .header {
-    grid-column: 1 / 11;
-}
-
-.menu {
-    grid-row: 1/ -1;
-    grid-column: 11/ 12;
+    grid-area: h;
   
 }
 
-.content{
+.menu {
+    grid-area: m;
+}
 
-grid-column: 1/ 11;
+.content{
+    grid-area: c;
+
 
 }
 
 .footer{
-    grid-column: 1 / 11;
+grid-area: f;
 }
